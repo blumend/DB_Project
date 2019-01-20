@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %} the_title {% endblock %}
+
+{% block body %}
+
+<div class="main-container">
+    <div class="grid-100">
+        <div id="timer" valign="center"></div>
+        {% if session['players'] == 2 and session['counter'] % 2 == 1 %}
+            <div class="align-left" style="margin-top: -38px;"><img src="/static/img/pointdownleft.png"></div>
+        {%  elif session['players'] == 2 and session['counter'] % 2 == 0 %}
+            <div class="align-right" style="margin-top: -38px;"><img src="/static/img/pointdownright.png"></div>
+        {% endif %}
+        <br>
+    
+        <div class='score'>
+            {% if session['players'] == 1 %}
+                <p class="align-left" style="margin: 0;">{{score1}}</p>
+            {% elif session['players'] == 2 and session['counter'] % 2 == 1 %}
+                <div class="align-left" >{{score1}}</div> 
+                <div class="align-right" >{{score2}}</div>
+            {% else %}
+                <div class="align-left" >{{score1}}</div>
+                <div class="align-right" >{{score2}}</div>
+            {% endif %}
+            <br>
+            {% for i in range(lives) %}
+                <img src="/static/img/heart_scaled.png" class="lives" align="left" style="margin-top:0;"/>
+            {% endfor %}
+            {% if lives2 %}
+                {% for i in range(lives2) %}
+                <img src="/static/img/heart_scaled.png" class="lives" align="right" style="margin-top:0;"/>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <h3 id="question" style="margin-bottom: -12px;">Q{{session['counter']}}</h3>
+        <h4> {{the_question}}</h4>
+    <form id="answers" method = 'POST' action = '{{url_for('answer')}}'>    
+        <p><input value= "A. {{a}}" type= 'submit' name = 'A'></p>
+        <p><input value= "B. {{b}}" type= 'submit' name = 'B'></p>
+        <p><input value="C. {{c}}" type= 'submit' name = 'C'></p>
+        <p><input value="D. {{d}}" type= 'submit' name = 'D'></p>
+    </form>
+    </div>
+</div>
+<script src="../static/js/quiz.js"></script>
+{% endblock %}

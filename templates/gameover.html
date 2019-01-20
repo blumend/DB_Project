@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="main-container">
+    <div class="grid-100">
+        <br>
+        <img src="/static/img/gameover2.png" class="logo"/> 
+        <br>
+        <h2 style="margin-top: -15px;"></h2>
+        <div>
+            <h3>{{ score1 }}</h3>
+            {% if score2 %}
+                <h3>{{ score2 }}</h3>
+            {% endif %}
+        </div>
+        <form action="/highscores">
+            <input type="submit" value="Highscores"/>
+        </form>
+    </div>
+</div>
+<script src = "../static/js/gameover.js"></script>
+{% endblock %}

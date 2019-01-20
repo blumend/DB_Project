@@ -1,0 +1,6 @@
+.vscode/
+.idea/
+7boomdump_track_metadata_original.sql
+create_table_songs.txt
+artist_location.txt
+7boom_3.1.sql

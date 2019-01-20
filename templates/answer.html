@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %} the_title {% endblock %}
+
+{% block body %}
+
+<div class="main-container">
+    <div class="grid-100">
+      <form  method="POST">
+          <h1>{{session['is_correct']}} Answer!<h1>
+          {% if session['players'] == 2 and session['counter'] % 2 == 0 %}
+            <h2>{{session['username2']}}</h2>
+            <h2>Score: {{session['score2']}}</h2>
+          {% else %}
+            <h2>{{session['username']}}</h2>
+            <h2>Score: {{session['score']}}</h2>
+          {% endif %}
+      </form>
+      {% if session['is_correct'] == "Wrong" %}
+        {% if session['counter'] % 7 == 0 %}
+          <img src="/static/img/boom2.png" class="logo" /> 
+        {% else %}
+          <img src="/static/img/wrong.png" class="logo" /> 
+        {% endif %}
+      {% else %}
+      <img src="/static/img/congrats.png" class="logo" /> 
+      {% endif %}
+		<form action= '{{ url_for('quiz')}}' method = 'POST'>
+		<div><input value= "Next" type= 'submit' name = 'Next'></div>
+		</form>
+		</div>
+</div>
+
+{% endblock %}

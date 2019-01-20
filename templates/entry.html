@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+
+<!--Enter Name -->
+<div class="main-container">
+    <div class="grid-100">
+    <img src="/static/img/7boom.png" class="logo" />  
+    <form method = 'POST'  action = ''>
+        <div><input value= "1 Player" type= "submit" name = "type"></div>
+        <div><input value= "2 Players" type= "submit" name = "type"></div>
+    </form>
+    <form action="/instructions">
+        <input type="submit" value="Instructions" />
+    </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} the_title {% endblock %}
+
+{% block body %}
+
+<div class="main-container">
+    <div class="grid-100">
+        <img src="/static/img/7boom.png" class="logo" />
+        <h4 style="margin: -6px;">Welcome to Musical7Boom!</h4>
+        <p style="line-height: 1.2em;">
+            A trivia game that combine the 7BOOM game.
+            You can Play a Single player, or you can challange your friends to a multi player Game!
+            Each Player starts the game with 5 lives.
+            Each correct answer will earn you a single point, but the real challange lays every 7 questions, the 7BOOM questions.
+            Those are special questions that will earn you 2 points.
+        </p>
+
+        <form action="/">
+            <input type="submit" value="Back" />
+        </form>
+	</div>
+</div>
+
+{% endblock %}

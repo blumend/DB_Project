@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="main-container">
+    <div class="grid-100">
+        <h1 style="margin-top: -10px;">Highscores</h1>
+        <table class="highscores" align="center">
+            <tr>
+              <th>Username</th>
+              <th>Score</th> 
+            </tr>
+            {% for user in highscores %}
+                <tr>
+                    <td>{{ user[0] }}</td>
+                    <td>{{ user[1] }}</td>
+                </tr>
+            {% endfor %}
+          </table>
+          <form action="/">
+            <input type="submit" value="Home"/>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} the_title {% endblock %}
+
+{% block body %}
+
+<div class="main-container">
+    <div class="grid-100">
+		<h3> {{session['username']}}<h3>
+        <h3> Your Final Quiz Results<h4>
+		<h3> Score: {{session['score']}} / {{session['counter']}}</h3>
+		{% if {{session['players']}} == 2 %}
+			<h3> {{session['username2']}}<h3>
+			<h3> Your Final Quiz Results<h4>
+			<h3> Score: {{session['score2']}} / {{session['counter2']}}</h3>
+		{% endif %}
+		<form action= '{{ url_for('index')}}' method = 'POST'>
+		<p><input value= "Restart" type= 'submit' name = 'Next'></p>
+		</form>
+		</div>
+</div>
+
+{% endblock %}

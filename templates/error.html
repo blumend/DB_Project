@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="main-container">
+    <div class="grid-100">
+        <h1>Error</h1>
+        <br><br>
+        <h2>An Error occurred with MySQL connection!</h2>
+        <h4>Please Check your connection and DB_config.txt file and try again</h4>
+        <form action="/">
+            <input type="submit" value="Home"/>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
