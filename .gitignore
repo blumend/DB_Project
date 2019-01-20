@@ -1,5 +1,7 @@
 .vscode/
 .idea/
+__pycache__/
+sqlite-to-mysql/
 7boomdump_track_metadata_original.sql
 create_table_songs.txt
 artist_location.txt
